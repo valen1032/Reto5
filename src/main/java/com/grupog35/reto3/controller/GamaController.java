@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/Gama")
@@ -20,6 +21,10 @@ public class GamaController {
     public List<GamaModel> obtener(){
         return gamaService.obtener();
 
+    }
+    @GetMapping("/{id}")
+    public Optional<GamaModel> obtenerPorId(@PathVariable int id){
+        return gamaService.obtenerPorId(id);
     }
 
     @PostMapping ("/save")

@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/Message")
@@ -20,6 +21,10 @@ public class MessageController {
     public List<MessageModel> obtener(){
         return messageService.obtener();
 
+    }
+    @GetMapping("/{id}")
+    public Optional<MessageModel> obtenerPorId(@PathVariable int id){
+        return messageService.obtenerPorId(id);
     }
 
     @PostMapping("/save")

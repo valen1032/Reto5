@@ -24,12 +24,12 @@ public class MessageModel implements Serializable {
 
 
     @ManyToOne
-    @JoinColumn(name = "id_car", nullable = false)
+    @JoinColumn(name = "id_car")
     @JsonIgnoreProperties({"messages","reservations"})
     private CarModel car;
 
     @ManyToOne
-    @JoinColumn(name = "id_client", nullable = false)
+    @JoinColumn(name = "id_client")
     @JsonIgnoreProperties({"messages","reservations"})
     private ClientModel client;
 }

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class GamaService {
@@ -37,6 +38,10 @@ public class GamaService {
             gama.setName(gamaDbo.getName());
             gamaRepository.save(gama);
         }
+    }
+
+    public Optional<GamaModel> obtenerPorId(int id){
+        return gamaRepository.findById(id);
     }
 
 }

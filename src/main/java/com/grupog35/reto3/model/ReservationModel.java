@@ -26,12 +26,12 @@ public class ReservationModel {
     private String status ="created";
 
     @ManyToOne
-    @JoinColumn(name = "id_car", nullable = false)
+    @JoinColumn(name = "id_car")
     @JsonIgnoreProperties({"reservations"})
     private CarModel car;
 
     @ManyToOne
-    @JoinColumn(name = "id_client", nullable = false)
+    @JoinColumn(name = "id_client")
     @JsonIgnoreProperties({"reservations", "messages"})
     private ClientModel client;
 
